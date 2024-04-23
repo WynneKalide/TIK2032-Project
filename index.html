@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Nama Anda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Wynne</h1>
+            <ul class="nav-links">
+                <li><a href="#gallery">Galeri</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <div class="burger" onclick="toggleMenu()">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bagian Utama -->
+    <main class="main">
+        <div class="container">
+            <h2 id="typewriter"></h2>
+            <p>Ini Adalah Website Untuk Tugas Matakuliah Pemrograman Web</p>
+
+        </div>
+    </main>
+
+    <!-- Galeri -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Galeri</h2>
+            <div class="gallery-items" id="galleryContainer">
+
+            </div>
+            <div style="text-align:center;">
+                <a href="#gallery" class="btn" style="background-color: grey" onclick="loadGallery()"
+                    id="loadGalleryButton">Tekan untuk Melihat Gambar</a>
+                <a href="#gallery" class="btn" style="background-color: grey;display:none" onclick="previousGallery()"
+                    id="previousGalleryButton">Sebelumnya</a>
+                <a href="#gallery" class="btn" style="background-color: grey;display:none" onclick="nextGallery()"
+                    id="nextGalleryButton">Next</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="blog">
+        <div class="container" id="blogContainer">
+            <h2>Blog</h2>
+            
+            
+         
+        </div>
+        <div style="text-align:center;">
+            <div style="text-align:center;">
+                <a href="#blog" class="btn" style="background-color: grey;" onclick="loadBlog()" id="loadBlogButton">Tekan untuk Melihat Artikel
+                    </a>
+                <a href="#blog" class="btn" style="background-color: grey;display:none" onclick="previousBlog()"
+                    id="previousBlogButton">Sebelumnya</a>
+                <a href="#blog" class="btn" style="background-color: grey;display:none" onclick="nextBlog()"
+                    id="nextBlogButton">Next</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Kontak</h2>
+            <p>Jika Anda memiliki pertanyaan atau ingin berdiskusi lebih lanjut, silakan hubungi kami melalui email atau
+                telepon:</p>
+            <ul>
+                <li>Email: example@example.com</li>
+                <li>Telepon: +62 822-7166-1066</li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        var text = "Selamat datang di Website Saya";
+        var speed = 100; // milliseconds per character
+
+        function typeWriter() {
+            if (text.length > 0) {
+                document.getElementById("typewriter").innerHTML += text.charAt(0);
+                text = text.substring(1);
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        typeWriter();
+    </script>
+</body>
+
+</html>
